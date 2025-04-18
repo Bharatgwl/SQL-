@@ -1,0 +1,1 @@
+select model,price,rating from campusx.smartphones;

@@ -1,0 +1,1 @@
+select os as "Operating system" , battery_capacity as "mah" from campusx.smartphones;
