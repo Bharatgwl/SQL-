@@ -1,5 +1,5 @@
-# 1 Group smartphones by brand and get theccount, average price , maxrating , avg screen size 
-# and average battery capacity 
+-- # 1 Group smartphones by brand and get theccount, average price , maxrating , avg screen size 
+-- # and average battery capacity 
 
 SELECT 
     brand_name,
@@ -11,7 +11,7 @@ FROM
     campusx.smartphones
 GROUP BY (brand_name);
 
-## 2 group by smartphones by whether they have a NFC and get the avg price and rating 
+-- ## 2 group by smartphones by whether they have a NFC and get the avg price and rating 
 
 SELECT 
     has_nfc, AVG(price) AS 'avg_price', AVG(rating)
@@ -19,7 +19,7 @@ FROM
     campusx.smartphones
 GROUP BY (has_nfc);
 
-## 3 group by phones by brand and processor and get the count of models and the average primary camera resolutin (Rear)
+-- ## 3 group by phones by brand and processor and get the count of models and the average primary camera resolutin (Rear)
 
 SELECT 
     brand_name,
@@ -31,7 +31,7 @@ FROM
 GROUP BY brand_name , processor_brand 
 order by brand_name;
 
-## 4 find top 5 most costly brand_name
+-- ## 4 find top 5 most costly brand_name
 
 SELECT 
     brand_name, AVG(price) AS avg_price
