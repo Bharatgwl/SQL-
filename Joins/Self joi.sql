@@ -1,0 +1,1 @@
+SELECT t1.name , t2.name FROM campusx.users1 as t1 inner JOIN campusx.users1 as t2  on t1.user_id = t2.emergency_contact;

@@ -41,9 +41,8 @@ GROUP BY brand_name
 ORDER BY avg_price DESC
 LIMIT 5;
 
-## 
 
-## 5 Which brand makes the smallest screen phone
+-- ## 5 Which brand makes the smallest screen phone
 
 SELECT 
     brand_name, AVG(screen_size) AS avg_screen
@@ -53,7 +52,7 @@ GROUP BY brand_name
 ORDER BY avg_screen ASC
 LIMIT 1;
 
-## 6 group smartphone by the brand and find the brand with the highest number of model which have both NFC and ir blaster
+-- ## 6 group smartphone by the brand and find the brand with the highest number of model which have both NFC and ir blaster
 SELECT 
     brand_name, COUNT(*) AS count
 FROM
@@ -65,7 +64,7 @@ GROUP BY brand_name
 ORDER BY count DESC
 LIMIT 1;
 
-## 7 find all samsung 5g enabled phone and find out the avg price of nfc and non nfc
+-- ## 7 find all samsung 5g enabled phone and find out the avg price of nfc and non nfc
 
 SELECT 
     has_nfc, AVG(price)
@@ -75,7 +74,7 @@ WHERE
     has_5g = 'True'
 GROUP BY has_nfc;
 
-## find the phone name and costliest phone
+-- ## find the phone name and costliest phone
 
 SELECT 
     *
