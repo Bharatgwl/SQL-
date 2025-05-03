@@ -32,7 +32,7 @@ GROUP BY brand_name , processor_brand
 order by brand_name;
 
 -- ## 4 find top 5 most costly brand_name
-
+    
 SELECT 
     brand_name, AVG(price) AS avg_price
 FROM

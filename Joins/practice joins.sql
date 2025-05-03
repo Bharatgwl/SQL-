@@ -34,13 +34,13 @@ limit 1;
 
 
 --  find the most profitable category 
-SELECT vertical,
-    sum(profit) as profit
-from order_details as t1
-    join category as t2 on t1.category_id = t2.category_id
-GROUP BY t2.vertical
-ORDER BY profit DESC
-LIMIT 1;
+    SELECT vertical,
+        sum(profit) as profit
+    from order_details as t1
+        join category as t2 on t1.category_id = t2.category_id
+    GROUP BY t2.vertical
+    ORDER BY profit DESC
+    LIMIT 1;
 
 
 -- which is the most profitable state

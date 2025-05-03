@@ -9,7 +9,7 @@ GROUP BY brand_name
 HAVING count > 20
 ORDER BY avg_price DESC;	
 
-## 1 find the avg rating of smartphone brands which having more than 20 phones 
+-- ## 1 find the avg rating of smartphone brands which having more than 20 phones 
 
 SELECT 
     brand_name, AVG(rating) as rating, COUNT(*) AS count
