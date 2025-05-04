@@ -1,19 +1,20 @@
-SELECT DISTINCT
-    brand_name
+SELECT
+    DISTINCT brand_name
 FROM
     campusx.smartphones;
 
-SELECT DISTINCT
-    (processor_brand) AS 'ALL processor'
+SELECT
+    DISTINCT (processor_brand) AS 'ALL processor'
 FROM
     campusx.smartphones;
 
-SELECT DISTINCT
-    (os)
+SELECT
+    DISTINCT (os)
 FROM
     campusx.smartphones;
 
-SELECT DISTINCT
-    brand_name, processor_brand
+SELECT
+    DISTINCT brand_name,
+    processor_brand
 FROM
     campusx.smartphones;

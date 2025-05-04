@@ -5,10 +5,10 @@ SELECT
     (
         SELECT
             avg(score)
-        from
+        FROM
             movies m2
-        where
+        WHERE
             m2.genre = m1.genre
     )
-from
+FROM
     movies m1

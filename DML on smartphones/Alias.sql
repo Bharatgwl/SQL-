@@ -1,1 +1,5 @@
-select os as "Operating system" , battery_capacity as "mah" from campusx.smartphones;
+SELECT
+    os AS "Operating system",
+    battery_capacity AS "mah"
+FROM
+    campusx.smartphones;

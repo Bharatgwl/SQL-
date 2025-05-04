@@ -1,1 +1,6 @@
-select model,price,rating from campusx.smartphones;
+SELECT
+    model,
+    price,
+    rating
+FROM
+    campusx.smartphones;

@@ -1,6 +1,21 @@
-select count(*) from test.`indian movies`;
+SELECT
+    count(*)
+FROM
+    test.`indian movies`;
 
-select director , avg(world-gross) as profit from movies group by director order by profit limit ;
+SELECT
+    director,
+    avg(world - gross) AS profit
+FROM
+    movies
+GROUP BY
+    director
+ORDER BY
+    profit
+LIMIT
+;
 
-
-select * from test.titanic;
+SELECT
+    *
+FROM
+    test.titanic;

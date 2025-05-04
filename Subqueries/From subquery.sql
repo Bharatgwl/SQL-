@@ -6,10 +6,10 @@ FROM
     (
         SELECT
             r_id,
-            avg(restaurant_rating) as 'avg_rating'
-        from
+            avg(restaurant_rating) AS 'avg_rating'
+        FROM
             subquery_orders
         GROUP BY
             r_id
     ) t1
-    join restaurants t2 on t1.r_id = t2.r_id;
+    JOIN restaurants t2 ON t1.r_id = t2.r_id;

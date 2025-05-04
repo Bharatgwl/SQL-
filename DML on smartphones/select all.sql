@@ -1,2 +1,8 @@
-use campusx;
-select * from smartphones where 1;
+USE campusx;
+
+SELECT
+    *
+FROM
+    smartphones
+WHERE
+    1;

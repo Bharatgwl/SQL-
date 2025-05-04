@@ -1,58 +1,57 @@
 USE campusx;
 
 -- find the user id who has not placed any order
-select
+SELECT
     *
-from
+FROM
     sub_query_users
-where
-    user_id not in (
-        SELECT DISTINCT
-            (user_id)
-        from
+WHERE
+    user_id NOT IN (
+        SELECT
+            DISTINCT (user_id)
+        FROM
             subquery_orders
-    )
-    -- find the top 3 directors based on total gross
-WITH
-    top_director as (
+    ) -- find the top 3 directors based on total gross
+    WITH top_director AS (
         SELECT
             director
         FROM
             movies
         GROUP BY
             director
-        order by
+        ORDER BY
             sum(gross) DESC
-        limit
+        LIMIT
             3
     )
 SELECT
     *
-from
+FROM
     movies
-where
-    director in (
+WHERE
+    director IN (
         SELECT
             *
-        from
+        FROM
             top_director
     );
+
 -- find the actors who have acted in more than one movie with rating greater than 8.5 and more than 25000 votes
-select
+SELECT
     *
-from
+FROM
     movies
-where
-    star in (
+WHERE
+    star IN (
         SELECT
             star
-        from
+        FROM
             movies
-        where
+        WHERE
             votes > 25000
         GROUP BY
             star
-        having
+        HAVING
             avg(score) > 8.5
     )
-    and votes > 25000;  
+    AND votes > 25000;

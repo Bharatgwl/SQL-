@@ -1,6 +1,6 @@
 --  populate a already created loyal customers table with records of only those customers who have ordered food more than 3 times
-CREATE table loyal_customers (
-    user_id int primary key,
+CREATE TABLE loyal_customers (
+    user_id int PRIMARY KEY,
     name varchar(50),
     money int
 );
@@ -20,4 +20,7 @@ GROUP BY
 HAVING
     COUNT(*) > 3;
 
-SELECT * from loyal_customers;
+SELECT
+    *
+FROM
+    loyal_customers;

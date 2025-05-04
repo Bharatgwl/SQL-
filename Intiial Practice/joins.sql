@@ -1,42 +1,106 @@
 ## SQL joins
 /*
-1. inner joins 
-2. outer joins
-3. right joins
-4. left joins
-5. natural joins 
-6. cross joins
+ 1. inner joins 
+ 2. outer joins
+ 3. right joins
+ 4. left joins
+ 5. natural joins 
+ 6. cross joins
+ 
+ */
+USE employee;
 
-*/
+SELECT
+    *
+FROM
+    stud;
 
-use employee;
+SELECT
+    *
+FROM
+    department;
 
-select * from stud;
-select * from department;
+INSERT INTO
+    stud
+VALUES
+(3, 'dikshant', 'jangra', 20);
 
-insert into stud values(3,'dikshant', 'jangra',20);
-
-select * from student_info;
-
+SELECT
+    *
+FROM
+    student_info;
 
 ## Inner joins
-select * from stud inner join department on stud.id = department.id;  --  but with this command id comes up in a repeated format
-select stud.id,stud.lname,stud.fname,department.deptname from stud inner join department on stud.id = department.id; 
+SELECT
+    *
+FROM
+    stud
+    INNER JOIN department ON stud.id = department.id;
 
+--  but with this command id comes up in a repeated format
+SELECT
+    stud.id,
+    stud.lname,
+    stud.fname,
+    department.deptname
+FROM
+    stud
+    INNER JOIN department ON stud.id = department.id;
 
 ## left join
-select * from stud left join department on stud.id = department.id;  --  but with this command id comes up in a repeated format
-select stud.id,stud.lname,stud.fname,department.deptname from stud left join department on stud.id = department.id; 
+SELECT
+    *
+FROM
+    stud
+    LEFT JOIN department ON stud.id = department.id;
+
+--  but with this command id comes up in a repeated format
+SELECT
+    stud.id,
+    stud.lname,
+    stud.fname,
+    department.deptname
+FROM
+    stud
+    LEFT JOIN department ON stud.id = department.id;
 
 ## right join
-select * from stud right join department on stud.id = department.id;  --  but with this command id comes up in a repeated format
-select stud.id,stud.lname,stud.fname,department.deptname from stud right join department on stud.id = department.id; 
+SELECT
+    *
+FROM
+    stud
+    RIGHT JOIN department ON stud.id = department.id;
 
+--  but with this command id comes up in a repeated format
+SELECT
+    stud.id,
+    stud.lname,
+    stud.fname,
+    department.deptname
+FROM
+    stud
+    RIGHT JOIN department ON stud.id = department.id;
 
 ## full outer join // just combines the left and right join
-select stud.id,stud.lname,stud.fname,department.deptname from stud left join department on stud.id = department.id
-union
-select stud.id,stud.lname,stud.fname,department.deptname from stud right join department on stud.id = department.id; `
+SELECT
+    stud.id,
+    stud.lname,
+    stud.fname,
+    department.deptname
+FROM
+    stud
+    LEFT JOIN department ON stud.id = department.id
+UNION
+SELECT
+    stud.id,
+    stud.lname,
+    stud.fname,
+    department.deptname
+FROM
+    stud
+    RIGHT JOIN department ON stud.id = department.id;
+
+`
 
 ## cross join
 select stud.id,stud.lname,stud.fname,department.deptname from stud cross join department;

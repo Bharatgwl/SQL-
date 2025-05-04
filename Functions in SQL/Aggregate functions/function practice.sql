@@ -1,41 +1,73 @@
 ## MIN / MAX 
+SELECT
+    min(price)
+FROM
+    campusx.smartphones;
 
-select  min(price) from campusx.smartphones;
+SELECT
+    max(price)
+FROM
+    campusx.smartphones;
 
-select max(price) from campusx.smartphones; 
+SELECT
+    max(price)
+FROM
+    campusx.smartphones
+WHERE
+    brand_name = 'samsung';
 
-select max(price) from campusx.smartphones where brand_name = 'samsung';
-
-select * from campusx.smartphones where price =110999;
+SELECT
+    *
+FROM
+    campusx.smartphones
+WHERE
+    price = 110999;
 
 ## AVG 
-
-select avg(rating)/10 from campusx.smartphones where brand_name = 'apple';
+SELECT
+    avg(rating) / 10
+FROM
+    campusx.smartphones
+WHERE
+    brand_name = 'apple';
 
 ## SUM
-
-select sum(price) from campusx.smartphones where brand_name = 'samsung';
+SELECT
+    sum(price)
+FROM
+    campusx.smartphones
+WHERE
+    brand_name = 'samsung';
 
 ## COUNT
+SELECT
+    count(*)
+FROM
+    campusx.smartphones
+WHERE
+    brand_name = 'samsung';
 
-select count(*) from campusx.smartphones where brand_name = 'samsung';
-
-select count(*) from campusx.smartphones where brand_name = 'xiaomi';
+SELECT
+    count(*)
+FROM
+    campusx.smartphones
+WHERE
+    brand_name = 'xiaomi';
 
 ## Count((distinct))
-
-select count(distinct(brand_name)) from campusx.smartphones;
+SELECT
+    count(DISTINCT(brand_name))
+FROM
+    campusx.smartphones;
 
 ## STD
-
-select std(price) from campusx.smartphones;
+SELECT
+    std(price)
+FROM
+    campusx.smartphones;
 
 ## Variance 
-
-select variance(price) from campusx.smartphones;
-
-
-
-
-
-
+SELECT
+    variance(price)
+FROM
+    campusx.smartphones;

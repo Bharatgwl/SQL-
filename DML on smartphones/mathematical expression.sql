@@ -1,11 +1,16 @@
 # Mathematical expression 
-
-SELECT 
+SELECT
     model,
-    SQRT(resolution_width * resolution_width + resolution_height * resolution_height) / screen_size AS 'ppi'
+    SQRT(
+        resolution_width * resolution_width + resolution_height * resolution_height
+    ) / screen_size AS 'ppi'
 FROM
     campusx.smartphones
-order by(ppi) desc;
+ORDER BY
+(ppi) DESC;
 
-
-select model, rating/10 from campusx.smartphones;
+SELECT
+    model,
+    rating / 10
+FROM
+    campusx.smartphones;

@@ -1,13 +1,19 @@
-use employee;
-create table person1(
-id int not null,
-first_name varchar(25) not null,
-last_name varchar(25),
-age int,
-constraint pk_person primary key(id, last_name) );
+USE employee;
 
-desc person1;
+CREATE TABLE person1(
+    id int NOT NULL,
+    first_name varchar(25) NOT NULL,
+    last_name varchar(25),
+    age int,
+    CONSTRAINT pk_person PRIMARY KEY(id, last_name)
+);
 
-alter table person1 drop primary key;
+DESC person1;
 
-Alter table person1 add primary key(id);
+ALTER TABLE
+    person1 DROP PRIMARY KEY;
+
+ALTER TABLE
+    person1
+ADD
+    PRIMARY KEY(id);

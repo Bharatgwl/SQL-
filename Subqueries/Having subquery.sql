@@ -9,6 +9,6 @@ HAVING
     avg(score) > (
         SELECT
             avg(score)
-        from
+        FROM
             movies
     )

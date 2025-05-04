@@ -1,14 +1,12 @@
 ## Update 
-
-UPDATE campusx.smartphones 
-SET 
+UPDATE
+    campusx.smartphones
+SET
     processor_brand = 'mediatek dimensity'
 WHERE
     processor_brand = 'dimensity';
 
-SELECT 
+SELECT
     *
 FROM
     campusx.smartphones;
-    
-    

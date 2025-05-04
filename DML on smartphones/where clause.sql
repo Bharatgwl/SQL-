@@ -1,14 +1,13 @@
-SELECT 
+SELECT
     *
 FROM
     campusx.smartphones
 WHERE
     brand_name = 'samsung';
 
-SELECT 
+SELECT
     *
 FROM
     campusx.smartphones
 WHERE
     price > 100000;
-

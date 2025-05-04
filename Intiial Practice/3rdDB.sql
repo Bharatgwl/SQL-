@@ -1,56 +1,91 @@
 -- create database employee;
+USE employee;
 
-use employee;
-create table emptable(id integer auto_increment,
- first_name varchar(10), 
- last_name varchar(10),
- salary integer,
- primary key (id));
- 
- insert into emptable(first_name,last_name,salary) 
- values
- ('bharat', 'gwl' , 10000),
- ('deepanshu' ,'choudhary' ,19000),
- ('archit', 'kamboj', NULL); 
- 
+CREATE TABLE emptable(
+    id integer AUTO_INCREMENT,
+    first_name varchar(10),
+    last_name varchar(10),
+    salary integer,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO
+    emptable(first_name, last_name, salary)
+VALUES
+    ('bharat', 'gwl', 10000),
+    ('deepanshu', 'choudhary', 19000),
+    ('archit', 'kamboj', NULL);
+
 --  select * from emptable where lastname is null;
-select * from emptable where salary is not null;
+SELECT
+    *
+FROM
+    emptable
+WHERE
+    salary IS NOT NULL;
 
 #sql update statement
+UPDATE
+    emptable
+SET
+    salary = 30000
+WHERE
+    id = 1;
 
-update emptable set salary = 30000 where id = 1;
-
-select * from emptable;
+SELECT
+    *
+FROM
+    emptable;
 
 ## SQL delete statement 
- delete from emptable where id=1;
- 
- select * from emptable;
- 
- ##sql alter statement
- # Add coloumn in existing table
- 
- alter table emptable add email varchar(30);
+DELETE FROM
+    emptable
+WHERE
+    id = 1;
 
-alter table emptable add dob date;
- 
- ##ALTER the table modify coloumn
-alter table emptable modify dob year;
+SELECT
+    *
+FROM
+    emptable;
+
+##sql alter statement
+# Add coloumn in existing table
+ALTER TABLE
+    emptable
+ADD
+    email varchar(30);
+
+ALTER TABLE
+    emptable
+ADD
+    dob date;
+
+##ALTER the table modify coloumn
+ALTER TABLE
+    emptable
+MODIFY
+    dob year;
 
 ##showing shema 
-desc emptable;
+DESC emptable;
 
 ## alter table to drop coloumn 
-alter table emptable drop column dob;
-alter table emptable 
-add unique(first_name);
+ALTER TABLE
+    emptable DROP COLUMN dob;
 
-alter table emptable
-add constraint uc_emptable unique(salary);
+ALTER TABLE
+    emptable
+ADD
+    UNIQUE(first_name);
 
-desc emptable;
+ALTER TABLE
+    emptable
+ADD
+    CONSTRAINT uc_emptable UNIQUE(salary);
 
-alter table emptable 
-drop index uc_emptable;
+DESC emptable;
+
+ALTER TABLE
+    emptable DROP INDEX uc_emptable;
 
 -- alter table emptable drop column email;

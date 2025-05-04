@@ -1,29 +1,38 @@
 /*
-mysql
-SQL NULL values
-SQL update statement
-SQL Delete statement 
-SQL alter table
-  --add columns in existing table 
-  --Modify/alter column
-  --Alter Table-drop coloumn
-  
-*/
-
+ mysql
+ SQL NULL values
+ SQL update statement
+ SQL Delete statement 
+ SQL alter table
+ --add columns in existing table 
+ --Modify/alter column
+ --Alter Table-drop coloumn
+ 
+ */
 #create database
-show databases;
-create database myshop;
-use myshop;
+SHOW DATABASES;
+
+CREATE DATABASE myshop;
+
+USE myshop;
 
 #create shop table
+CREATE TABLE shoptable(
+  id integer AUTO_INCREMENT,
+  firstname varchar(10),
+  lastname varchar(10),
+  PRIMARY KEY(id)
+);
 
-create table shoptable(id integer auto_increment, firstname varchar(10), lastname varchar(10) ,primary key(id));
+INSERT INTO
+  shoptable(firstname, lastname)
+VALUES
+  ('bharat', 'gwl'),
+  ('archit', 'kamboj');
 
-insert into shoptable(firstname,lastname) 
-values
- ('bharat' ,'gwl'),
- ('archit' ,'kamboj');
+SHOW TABLES;
 
-show tables;
-
-select * from shoptable;
+SELECT
+  *
+FROM
+  shoptable;

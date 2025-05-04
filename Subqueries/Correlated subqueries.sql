@@ -1,15 +1,15 @@
 --  find the movie that have a rating higher than the avg rating of its own genre 
 SELECT
     *
-from
+FROM
     movies m1
 WHERE
     score > (
         SELECT
             avg(score)
-        from
+        FROM
             movies m2
-        where
+        WHERE
             m2.genre = m1.genre -- isme m1.genre har baar new ayega fir m2.genre check karega m1.genre ke equal hay yaa nhi iska matlb har baar bahar se ek genre mil raha hay fir usko check kr rhe hay or uska avg nikal ke de rhe hay 
             -- for(i->m1.genre){ 
             --      movie.score > avg(score)  then select this movie
@@ -22,32 +22,32 @@ WHERE
             --     }
             -- }
     );
-    -- find the fav food of each customer 
-with
-    fav_food as (
-        select
-            name,
-            f_name,
-            count(*) as 'frequency'
-        from
-            sub_query_users as t1
-            join subquery_orders t2 on t1.user_id = t2.user_id
-            join subquery_order_details t3 on t2.order_id = t3.order_id
-            join food t4 on t3.f_id = t4.f_id
-        group BY
-            t1.name,
-            t4.f_name
-    )
-select
+
+-- find the fav food of each customer 
+WITH fav_food AS (
+    SELECT
+        name,
+        f_name,
+        count(*) AS 'frequency'
+    FROM
+        sub_query_users AS t1
+        JOIN subquery_orders t2 ON t1.user_id = t2.user_id
+        JOIN subquery_order_details t3 ON t2.order_id = t3.order_id
+        JOIN food t4 ON t3.f_id = t4.f_id
+    GROUP BY
+        t1.name,
+        t4.f_name
+)
+SELECT
     *
-from
+FROM
     fav_food f1
-where
+WHERE
     frequency = (
-        select
+        SELECT
             max(frequency)
-        from
+        FROM
             fav_food f2
-        where
+        WHERE
             f1.name = f2.name
     )

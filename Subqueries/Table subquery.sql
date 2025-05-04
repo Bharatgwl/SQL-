@@ -1,14 +1,14 @@
 --  find the most profitable movie of each year 
 SELECT
     *
-from
+FROM
     movies
-where
-    (year, gross - budget) in (
+WHERE
+    (year, gross - budget) IN (
         SELECT
             year,
             max(gross - budget)
-        from
+        FROM
             movies
         GROUP BY
             year
@@ -17,47 +17,46 @@ where
 -- find the highest rated movie of each genre with more than 25000 votes
 SELECT
     *
-from
+FROM
     movies
 WHERE
-    (genre, score) in (
+    (genre, score) IN (
         SELECT
             genre,
             max(score)
-        from
+        FROM
             movies
-        where
+        WHERE
             votes > 25000
         GROUP BY
             genre
     )
-    and votes > 25000;
+    AND votes > 25000;
 
 -- find the highes grossing hbamovies which has top star and director combo in terms of gross income 
-with
-    var as (
-        SELECT
-            star,
-            director,
-            max(gross)
-        from
-            movies
-        GROUP BY
-            star,
-            director
-        ORDER BY
-            sum(gross) DESC
-        LIMIT
-            5
-    )
+WITH var AS (
+    SELECT
+        star,
+        director,
+        max(gross)
+    FROM
+        movies
+    GROUP BY
+        star,
+        director
+    ORDER BY
+        sum(gross) DESC
+    LIMIT
+        5
+)
 SELECT
     *
-from
+FROM
     movies
-where
-    (star, director, gross) in (
-        select
+WHERE
+    (star, director, gross) IN (
+        SELECT
             *
-        from
+        FROM
             var
     );

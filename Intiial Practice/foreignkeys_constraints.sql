@@ -1,5 +1,6 @@
 # primary key and foreign key
-use employee;
+USE employee;
+
 -- one way to add  primary  keys t multiple values
 -- create table practicetbl(
 -- id int not null,
@@ -9,7 +10,6 @@ use employee;
 -- -- primary key(id)
 -- constraint p_person primary key(id,firstname)
 -- );
-
 CREATE TABLE practicetbl (
     id INT NOT NULL,
     firstname VARCHAR(25) NOT NULL,
@@ -19,14 +19,20 @@ CREATE TABLE practicetbl (
 
 # adding primary key after defining the schema
 # all are the ways to define constraints in the table after defining schema 
-alter table practicetbl add primary key(id);
+ALTER TABLE
+    practicetbl
+ADD
+    PRIMARY KEY(id);
 
-alter table practicetbl add constraint variable primary key(id,firstname);
-desc practicetbl;	
+ALTER TABLE
+    practicetbl
+ADD
+    CONSTRAINT variable PRIMARY KEY(id, firstname);
+
+DESC practicetbl;
+
 -- alter table practicetbl drop primary key;
-
-drop table practicetbl;
-
+DROP TABLE practicetbl;
 
 CREATE TABLE person (
     id INT NOT NULL,
@@ -36,7 +42,8 @@ CREATE TABLE person (
     salary INT,
     PRIMARY KEY (id)
 );
-desc person;
+
+DESC person;
 
 CREATE TABLE department (
     id INT NOT NULL,
@@ -44,24 +51,33 @@ CREATE TABLE department (
     deptname VARCHAR(25) NOT NULL,
     PRIMARY KEY (department_id)
 );
-desc department;
-drop table department;
-drop table person;
+
+DESC department;
+
+DROP TABLE department;
+
+DROP TABLE person;
 
 # adding the foreign key after defining the schema
-alter table department add foreign key(id) references person(id);
+ALTER TABLE
+    department
+ADD
+    FOREIGN KEY(id) REFERENCES person(id);
 
+INSERT INTO
+    person
+VALUES
+(1, 'bharat', 'gwl', 18, 50000);
 
-insert into person values(1,'bharat', 'gwl', 18, 50000);
-insert into department value(1,10,'physics');
+INSERT INTO
+    department value(1, 10, 'physics');
 
-SELECT 
+SELECT
     *
 FROM
     department
 WHERE
     id = 1;
-
 
 CREATE TABLE person (
     id INT NOT NULL,
@@ -72,15 +88,18 @@ CREATE TABLE person (
     PRIMARY KEY (id),
     CHECK (salary < 50000)
 );
-desc person;
 
-insert into person values(1, 'bharat','gwl', 18, 40000);
+DESC person;
 
-SELECT 
+INSERT INTO
+    person
+VALUES
+(1, 'bharat', 'gwl', 18, 40000);
+
+SELECT
     *
 FROM
     person;
-
 
 CREATE TABLE person (
     id INT NOT NULL,
@@ -90,11 +109,16 @@ CREATE TABLE person (
     PRIMARY KEY (id)
 );
 
-desc person;
+DESC person;
+
 -- delete from person where id =1;
-insert into person values(1, 'bharat','gwl','raipur');
+INSERT INTO
+    person
+VALUES
+(1, 'bharat', 'gwl', 'raipur');
+
 -- alter table person drop city_name;
-SELECT 
+SELECT
     *
 FROM
     person;

@@ -1,8 +1,12 @@
 ## delete 
+SELECT
+    *
+FROM
+    campusx.smartphones
+WHERE
+    price > 200000;
 
-select * from campusx.smartphones where price >  200000;
-
-delete from campusx.smartphones where price>200000;
-
-
-	
+DELETE FROM
+    campusx.smartphones
+WHERE
+    price > 200000;

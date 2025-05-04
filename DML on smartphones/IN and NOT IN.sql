@@ -1,9 +1,24 @@
 ## IN and NOT IN
-
-select * from campusx.smartphones where processor_brand='snapdragon' or processor_brand = 'exynos' or processor_brand = 'bionic';
+SELECT
+    *
+FROM
+    campusx.smartphones
+WHERE
+    processor_brand = 'snapdragon'
+    OR processor_brand = 'exynos'
+    OR processor_brand = 'bionic';
 
 -- using in
+SELECT
+    *
+FROM
+    campusx.smartphones
+WHERE
+    processor_brand IN ('snapdragon', 'exynos', 'bionic');
 
-select * from campusx.smartphones where processor_brand in ('snapdragon' , 'exynos' ,'bionic');
-
-select * from campusx.smartphones where processor_brand not in ('snapdragon' , 'exynos' ,'bionic');
+SELECT
+    *
+FROM
+    campusx.smartphones
+WHERE
+    processor_brand NOT IN ('snapdragon', 'exynos', 'bionic');
