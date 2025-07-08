@@ -1,4 +1,5 @@
--- use campusx;
+use campusx;
+
 -- CREATE TABLE marks (
 --     student_id INTEGER PRIMARY KEY AUTO_INCREMENT,
 --     name VARCHAR(255),
@@ -35,7 +36,7 @@ SELECT
     avg(marks) OVER ()
 FROM
     marks;
-
+--  window function are analytical function which perform aggregation function
 -- window function return the same number of rows as the original query
 SELECT
     *,

@@ -27,7 +27,7 @@ HAVING
 ORDER BY
     rating;
 
-## 2 find the top 3 brands with the highest avg ram that have a refresh rate at least 90hz and the fast charging available and dont consider brands which have less than 10 phones
+-- ## 2 find the top 3 brands with the highest avg ram that have a refresh rate at least 90hz and the fast charging available and dont consider brands which have less than 10 phones
 SELECT
     brand_name,
     AVG(ram_capacity) AS avg_ram
@@ -45,7 +45,7 @@ ORDER BY
 LIMIT
     3;
 
-## 3 find the avg price of all the phone brand with the avg rating > 70 and num phones more than 10 among all 5g enabled 
+-- ## 3 find the avg price of all the phone brand with the avg rating > 70 and num phones more than 10 among all 5g enabled 
 SELECT
     brand_name,
     ROUND(AVG(price))

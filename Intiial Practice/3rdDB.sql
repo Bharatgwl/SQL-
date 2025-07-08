@@ -69,7 +69,7 @@ MODIFY
 ##showing shema 
 DESC emptable;
 
-## alter table to drop coloumn 
+-- ## alter table to drop coloumn 
 ALTER TABLE
     emptable DROP COLUMN dob;
 

@@ -17,8 +17,8 @@ CREATE TABLE practicetbl (
     age INT
 );
 
-# adding primary key after defining the schema
-# all are the ways to define constraints in the table after defining schema 
+-- # adding primary key after defining the schema
+-- # all are the ways to define constraints in the table after defining schema 
 ALTER TABLE
     practicetbl
 ADD
@@ -58,7 +58,7 @@ DROP TABLE department;
 
 DROP TABLE person;
 
-# adding the foreign key after defining the schema
+-- # adding the foreign key after defining the schema
 ALTER TABLE
     department
 ADD
