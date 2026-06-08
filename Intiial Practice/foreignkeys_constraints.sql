@@ -31,6 +31,8 @@ ADD
 
 DESC practicetbl;
 
+
+
 -- alter table practicetbl drop primary key;
 DROP TABLE practicetbl;
 

@@ -91,3 +91,39 @@ FROM
 WHERE
     t.marks = t.Last_marks
     AND t.name = t.Last_name;
+
+-- Lag 
+SELECT
+    *,
+    LAG(marks) over(
+        ORDER BY
+            marks DESC
+    )
+FROM
+    marks;
+
+-- Lead 
+SELECT
+    *,
+    LEAD(marks) over(
+        ORDER BY
+            marks DESC
+    )
+FROM
+    marks;
+
+SELECT
+    MONTH(date),
+    sum(amount),
+    (
+        (
+            sum(amount) - Lag(sum(amount)) over(
+                ORDER BY
+                    MONTH(date)
+            )
+        ) / sum(amount)
+    ) * 100 AS growth
+FROM
+    subquery_orders
+GROUP BY
+    MONTH(date);

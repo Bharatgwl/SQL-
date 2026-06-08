@@ -8,7 +8,7 @@ WHERE
     OR processor_brand = 'exynos'
     OR processor_brand = 'bionic';
 
--- using in
+-- using in 
 SELECT
     *
 FROM
